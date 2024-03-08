@@ -1,0 +1,9 @@
+{
+  "accessKeyId": "xx",
+  "secretAccessKey": "xx",
+  "sessionToken": "xx",
+  "expiration": "xx",
+  "roleArn": "arn:aws:xxx",
+  "handshakeId": "xx",
+  "RoleSessionName": "xx"
+}
