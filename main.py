@@ -19,22 +19,31 @@ def renew_assumed_role():
     from app.aws import renew_assumed_role
     renew_assumed_role()
 
+@app.command()
+def renew_assumed_role_db():
+    """
+    Renew an Assum role
+    """
+    from app.aws import renew_assumed_role_from_db
+    _id = int(input("Enter account id: "))
+    renew_assumed_role_from_db(_id)
 
 @app.command()
-def decrypt():
+def menu():
     """
-    Decrypt the data
+    Choose from the menu
     """
-    from app.kms import decrypt_data
-    decrypt_data()
+    typer.echo("1. Decrypt data")
+    typer.echo("2. Renew Assumed Role")
+    typer.echo("3. Renew Assumed Role from DB")
+    choice = int(input("Enter your choice: "))
+    if choice == 1:
+        decrypt()
+    elif choice == 2:
+        renew_assumed_role()
+    elif choice == 3:
+        renew_assumed_role_db()
 
-@app.command()
-def test():
-    """
-    test
-    """
-    from app.test import test
-    test()
 
 if __name__ == "__main__":
     app()
