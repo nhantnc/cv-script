@@ -16,7 +16,8 @@ def renew_assumed_role_from_db(account_id):
     data = cur.fetchone()
     conn.close()
     variant = kms_utils.decrypt_data(data[0])
-    response = aws_utils.renew_assumed_role(variant['roleArn'], variant['RoleSessionName'], variant['handshakeId'])
+    role_session_name = variant['roleArn'].split('/')[-1]
+    response = aws_utils.renew_assumed_role(variant['roleArn'], role_session_name, variant['handshakeId'])
     print("=====================================================")
     print("Assumed Role Renewed Successfully ==>")
     print(response)
