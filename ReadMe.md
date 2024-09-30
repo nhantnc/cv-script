@@ -15,23 +15,17 @@ To install this Python project using pyenv, follow these steps:
 
 
 ## Usage
-
-1. Decrypt data, the input file is `./input/encrypted.json`:
-
+1. Run the command below and follow the menu:
 ```bash
-python3 ./main.py decrypt
+source run.sh
+```
+2. The menu should be:
+```bash
+1. Decrypt data
+2. Renew Assumed Role
+3. Renew Assumed Role from DB
 ```
 
-
-
-2. Renew assumed role, the input file is `./input/assume_role.json`:
-
-```bash
-python3 ./main.py renew-assume-role
-```
-
-3. Using menu to choose the function you want to run:
-
-```bash
-python3 ./main.py menu
-```
+Note:
+1. When you want to `Decrypt data`, the encrypted data should be in `\input\encrypted.json`.
+2. When you want to `Renew Assumed Role`, the role data should be in `\input\assumed_role.json`.
